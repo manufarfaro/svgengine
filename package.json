@@ -1,0 +1,27 @@
+{
+  "name": "charmaker",
+  "version": "1.0.0",
+  "description": "collaborative character creator with cute illustrations from friends",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kidManuel/charmaker.git"
+  },
+  "keywords": [
+    "collaborative",
+    "js",
+    "illustration"
+  ],
+  "author": "kidManuel et al",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kidManuel/charmaker/issues"
+  },
+  "homepage": "https://github.com/kidManuel/charmaker#readme",
+  "devDependencies": {
+    "local-web-server": "^2.2.1"
+  }
+}
