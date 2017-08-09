@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/kidManuel/charmaker#readme",
   "devDependencies": {
-    "local-web-server": "^2.2.1"
+    "http-server": "^0.10.0"
   }
 }
