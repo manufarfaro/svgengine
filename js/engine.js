@@ -1,18 +1,18 @@
 window.loader = (function() {
     return {
-        setFolder: function(folder) {
-            this.folder = folder;
+        setPath: function(path) {
+            this.path = path;
         },
-        getFolder: function() {
-            return this.folder;
+        getPath: function() {
+            return this.path;
         },
-        load: function(filename, folder) {
+        load: function(filename, path) {
             var output;
             if (!filename) {
                 throw new Error('no filename provided')
             }
-            var folder = folder || 'resources'
-            $.ajax('./' + folder + '/' + filename + '.svg', {
+            var path = this.path || path || 'resources'
+            $.ajax('./' + path + '/' + filename + '.svg', {
                 success: function(data) {
                     out = data.getElementsByTagName('svg')[0];
                     document.getElementsByTagName('body')[0].appendChild(out)
