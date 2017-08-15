@@ -1,4 +1,8 @@
 window.loader = (function() {
+    Element.prototype.svgInsert = function(svg) {
+        placeInObject(this, svg)
+    }
+
     function setPath(path) {
         this.path = path;
     }
