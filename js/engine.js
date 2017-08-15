@@ -24,10 +24,19 @@ window.loader = (function() {
         })
     }
 
+    function placeInObject(object, svgToPlace) {
+        if (!object instanceof Node) {
+            throw new Error('not a valid html element')
         }
+        load(svgToPlace, function(mySvg) {
+            object.appendChild(mySvg);
+        })
+    }
+
     return {
         getPath: getPath,
         setPath: setPath,
         load: load,
+        placeInObject: placeInObject
     }
 })();
