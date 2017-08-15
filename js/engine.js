@@ -1,4 +1,6 @@
 window.loader = (function() {
+    window.obj = document.getElementById('testObj')
+
     Element.prototype.svgInsert = function(svg) {
         placeInObject(this, svg)
     }
