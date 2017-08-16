@@ -1,16 +1,21 @@
 window.loader = (function() {
     window.obj = document.getElementById('testObj')
+    var setup = {
+        path: null,
+        useCache: false,
+        defaultClass: null
+    }
 
     Element.prototype.svgInsert = function(svg) {
         placeInObject(this, svg)
     }
 
     function setPath(path) {
-        this.path = path;
+        setup.path = path;
     }
 
     function getPath() {
-        return this.path;
+        return setup.path;
     }
 
     function load(filename, callback, path) {
