@@ -6,8 +6,8 @@ window.loader = (function() {
         defaultClass: null
     }
 
-    Element.prototype.svgInsert = function(svg) {
-        placeInObject(this, svg)
+    Element.prototype.svgInsert = function(svg, config) {
+        placeInObject(this, svg, config)
     }
 
     function setPath(path) {
@@ -18,7 +18,7 @@ window.loader = (function() {
         return setup.path;
     }
 
-    function load(filename, callback, path) {
+    function load(filename, callback, callbackExtraArguments, path) {
         var output;
         if (!filename) {
             throw new Error('no filename provided')
@@ -27,7 +27,7 @@ window.loader = (function() {
         $.ajax('./' + path + '/' + filename + '.svg', {
             success: function(data) {
                 out = data.getElementsByTagName('svg')[0];
-                callback(out);
+                callback(out, callbackExtraArguments);
             },
             error: function() {
                 console.log('you fucked up')
@@ -35,13 +35,22 @@ window.loader = (function() {
         })
     }
 
-    function placeInObject(object, svgToPlace) {
+    function placeInObject(object, svgName, config) {
         if (!object instanceof Node) {
             throw new Error('not a valid html element')
         }
-        load(svgToPlace, function(mySvg) {
-            object.appendChild(mySvg);
-        })
+        load(svgName, function(mySvg, config) {
+            object.appendChild(prepSVG(mySvg, config));
+        }, config)
+    }
+
+    function prepSVG(svg, config) {
+        var extraClass =  config.class || setup.defaultClass;
+        if (extraClass) {
+            svg.classList.add(extraClass);
+        }
+        return svg;
+    }
     }
 
     return {
