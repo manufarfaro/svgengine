@@ -25,5 +25,8 @@
     "eslint": "^4.4.1",
     "eslint-config-google": "^0.9.1",
     "http-server": "^0.10.0"
+  },
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint ./js/engine.js"
   }
 }
