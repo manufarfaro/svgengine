@@ -44,9 +44,11 @@ window.loader = (function() {
     }
 
     function prepSVG(svg, config) {
-        let extraClass = config.class || setup.defaultClass;
-        if (extraClass) {
-            svg.classList.add(extraClass);
+        if (currentSetup.defaultClass) {
+            svg.classList.add(currentSetup.defaultClass);
+        }
+        if (config.class) {
+            svg.classList.add(config.class);
         }
         return svg;
     }
