@@ -1,21 +1,29 @@
 window.loader = (function() {
     window.obj = document.getElementById('testObj');
-    let setup = {
+    let currentSetup = {
         path: null,
         useCache: false,
         defaultClass: null,
     };
 
-    Element.prototype.svgInsert = function(svg, config) {
-        placeInObject(this, svg, config);
+    Element.prototype.svgInsert = function(svgName, config) {
+        placeInObject(this, svgName, config);
     };
 
     function setPath(path) {
-        setup.path = path;
+        currentSetup.path = path;
     }
 
     function getPath() {
-        return setup.path;
+        return currentSetup.path;
+    }
+
+    function setup(setupObject) {
+        for(var key in setupObject) {
+            if (currentSetup.hasOwnProperty(key)) {
+                currentSetup[key] = setupObject[key]
+            }
+        }
     }
 
     function load(filename, callback, callbackExtraArguments, path) {
@@ -63,5 +71,6 @@ window.loader = (function() {
         setPath: setPath,
         load: load,
         placeInObject: placeInObject,
+        setup: setup
     };
 })();
