@@ -10,14 +10,6 @@ window.loader = (function() {
         placeInObject(this, svgName, config);
     };
 
-    function setPath(path) {
-        currentSetup.path = path;
-    }
-
-    function getPath() {
-        return currentSetup.path;
-    }
-
     function setup(setupObject) {
         for(var key in setupObject) {
             if (currentSetup.hasOwnProperty(key)) {
@@ -64,6 +56,18 @@ window.loader = (function() {
 
     function addCSSProperty(key, value) {
 
+    }
+
+    function setOption(key, value) {
+        if (currentSetup[key]) {
+            currentSetup[key] = value;
+        }
+    }
+
+    function setOption(key, value) {
+        if (currentSetup[key]) {
+            return currentSetup[key];
+        }
     }
 
     return {
