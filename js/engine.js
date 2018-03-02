@@ -24,8 +24,8 @@ window.loader = (function() {
         if (!filename) {
             throw new Error('no filename provided');
         }
-        var path = this.path || path || 'resources';
-        $.ajax('./' + path + '/' + filename + '.svg', {
+        let currentpath = currentSetup.path || path || 'resources';
+        $.ajax('./' + currentpath + '/' + filename + '.svg', {
             success: function(data) {
                 out = data.getElementsByTagName('svg')[0];
                 callback(out, callbackExtraArguments);
