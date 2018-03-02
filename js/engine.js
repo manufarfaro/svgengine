@@ -1,5 +1,7 @@
 window.loader = (function() {
-    window.obj = document.getElementById('testObj');
+
+    window.obj = document.getElementById('testObj'); //DELETE THIS IN PROD
+
     let currentSetup = {
         path: null,
         useCache: false,
