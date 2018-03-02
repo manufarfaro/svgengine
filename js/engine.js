@@ -73,10 +73,11 @@ window.loader = (function() {
     }
 
     return {
-        getPath: getPath,
+        currentSetup: currentSetup
+        /*getPath: getPath,
         setPath: setPath,
         load: load,
         placeInObject: placeInObject,
-        setup: setup
+        setup: setup*/
     };
 })();
