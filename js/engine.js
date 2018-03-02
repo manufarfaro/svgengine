@@ -40,9 +40,10 @@ window.loader = (function() {
         if (!object instanceof Node) {
             throw new Error('not a valid html element');
         }
-        load(svgName, function(mySvg, config) {
-            object.appendChild(prepSVG(mySvg, config));
-        }, config);
+        let currentConfig = config || {};
+        load(svgName, function(mySvg, currentConfig) {
+            object.appendChild(prepSVG(mySvg, currentConfig));
+        }, currentConfig);
     }
 
     function prepSVG(svg, config) {
