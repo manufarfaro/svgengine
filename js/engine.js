@@ -67,10 +67,16 @@ window.loader = (function() {
         }
     }
 
-    function setOption(key, value) {
-        if (currentSetup[key]) {
-            return currentSetup[key];
+    function setPath(path) {
+        //TODO: Ensure no / at the beggining and end.
+        if (typeof path !== 'string') {
+            throw new Error('path is not a string');
         }
+        currentSetup.path = path;
+    }
+
+    function getPath() {
+        return currentSetup.path;
     }
 
     return {
