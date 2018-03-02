@@ -13,7 +13,7 @@ window.loader = (function() {
     };
 
     function setup(setupObject) {
-        for(var key in setupObject) {
+        for(let key in setupObject) {
             if (currentSetup.hasOwnProperty(key)) {
                 currentSetup[key] = setupObject[key]
             }
