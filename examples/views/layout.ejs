@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>SVGEngine</title>
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+            }
+            nav {
+                padding: 1rem;
+                text-align: center;
+                background-color: #2a2b2a;
+                color: #f2f3d9;
+            }
+            nav a {
+                color: #f2f3d9;
+            }
+            nav a:hover {
+                color: #aa4465;
+            }
+            main {
+                margin: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
+        <script type="text/javascript" src="js/svg-engine.browser.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h1>SVGEngine Examples</h1>
+            <nav>
+                <a href="/">Index</a> -
+                <a href="/simple">Simple</a>
+            </nav>
+        </header>
+        <main id="content">
+            <%- body %>
+        </main>
+    </body>
+</html>

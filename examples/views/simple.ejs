@@ -1,0 +1,27 @@
+<div id="root"></div>
+<style>
+    #root {
+        width: 300px;
+        height: 300px;
+    }
+
+    /* Some native SVG color manipulation */
+    .white-monkey path.st1 {
+        fill: #fafafa !important;
+    }
+</style>
+<script type="text/javascript">
+  window.addEventListener('DOMContentLoaded', function() {
+    // Place and register your SVG file
+    var svgEl = svgEngine.SVGLoader(document.getElementById('root'), {
+      filePath: '../assets/monkey.svg',
+      classes: ['white-monkey']
+    });
+
+    // You can get the SVG DOMElement by resolving the object promise
+    svgEl
+      .then(function resolve(svgEl) {
+        console.log('SVG Element', svgEl);
+      })
+  })
+</script>
