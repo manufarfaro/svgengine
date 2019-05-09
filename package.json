@@ -1,10 +1,12 @@
 {
-  "name": "charmaker",
+  "name": "@kidmanuel/svg-engine",
   "version": "1.0.0",
   "description": "collaborative character creator with cute illustrations from friends",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c",
+    "start:examples": "node examples/server.js",
+    "lint": "./node_modules/.bin/eslint ./js/engine.js"
   },
   "repository": {
     "type": "git",
@@ -18,15 +20,30 @@
   "author": "kidManuel et al",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kidManuel/charmaker/issues"
+    "url": "https://github.com/kidManuel/svgengine/issues"
   },
-  "homepage": "https://github.com/kidManuel/charmaker#readme",
+  "homepage": "https://github.com/kidManuel/svgengine#readme",
   "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-external-helpers": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
     "eslint": "^4.4.1",
     "eslint-config-google": "^0.9.1",
-    "http-server": "^0.10.0"
+    "koa": "^2.7.0",
+    "koa-ejs": "^4.2.0",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "koa-static-server": "^1.4.0",
+    "koa-views": "^6.2.0",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-node-resolve": "^4.2.3"
   },
-  "scripts": {
-    "lint": "./node_modules/.bin/eslint ./js/engine.js"
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "@babel/runtime": "^7.4.4",
+    "regenerator-runtime": "^0.13.2"
   }
 }
