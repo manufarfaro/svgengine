@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rollup -c",
     "start:examples": "node examples/server.js",
-    "lint": "./node_modules/.bin/eslint ./js/engine.js"
+    "lint": "./node_modules/.bin/eslint ./js/engine.js",
+    "go": "rollup -c && node examples/server.js"
   },
   "repository": {
     "type": "git",
