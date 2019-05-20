@@ -1,0 +1,55 @@
+<div id="root">
+    <div class="button" id="loadMonkey">
+        Load!
+    </div>
+
+    <div id="stage"></div>
+</div>
+<style>
+  
+    .monkey-animation #eyebrows{
+      animation-duration: 1.5s;
+      animation-name: toingtoing;
+      animation-iteration-count: infinite;
+
+    }
+
+    @keyframes toingtoing {
+
+      60% {
+        transform: translateY(0);
+      }
+
+      70% {
+        transform: translateY(-5px);
+      }
+      80% {
+        transform: translateY(0);
+      }
+      90% {
+        transform: translateY(-5px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+</style>
+<script type="text/javascript">
+  document.getElementById('loadMonkey').addEventListener('click', function() {
+
+    // Place and register your SVG file
+    var svgEl = svgEngine.SVGLoader(document.getElementById('stage'), {
+      filePath: '../assets/monkey.svg',
+      classes: ['monkey-animation']
+    });
+
+    // You can get the SVG DOMElement by resolving the object promise
+    svgEl
+      .then(function resolve(svgEl) {
+        console.log('SVG Element', svgEl);
+      })
+
+    setMessage("Monkey Loaded with class '.monkey-animation'!")
+  })
+</script>

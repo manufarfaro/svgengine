@@ -19,7 +19,8 @@ render(app, {
 router
   .get('/', index)
   .get('/simple', simple)
-  .get('/loadClass', loadClass);
+  .get('/loadClass', loadClass)
+  .get('/animation', animation);
 
 app.use(router.routes());
 
@@ -36,6 +37,10 @@ async function simple(ctx) {
 
 async function loadClass(ctx) {
   await ctx.render('loadClass');
+}
+
+async function animation(ctx) {
+  await ctx.render('animation');
 }
 
 app.listen(port, () => {
