@@ -18,7 +18,8 @@ render(app, {
 
 router
   .get('/', index)
-  .get('/simple', simple);
+  .get('/simple', simple)
+  .get('/loadClass', loadClass);
 
 app.use(router.routes());
 
@@ -31,6 +32,10 @@ async function index(ctx) {
 
 async function simple(ctx) {
   await ctx.render('simple');
+}
+
+async function loadClass(ctx) {
+  await ctx.render('loadClass');
 }
 
 app.listen(port, () => {

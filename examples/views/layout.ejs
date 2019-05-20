@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
         <title>SVGEngine</title>
         <style>
             html,
@@ -10,6 +11,7 @@
                 width: 100%;
                 height: 100%;
                 text-align: center;
+                font-family: 'Raleway', sans-serif;
             }
             nav {
                 padding: 1rem;
@@ -29,15 +31,51 @@
                 align-items: center;
                 justify-content: center;
             }
+
+            .button {
+                background-color: #2E4052;
+                color: #fafafa;
+                padding: 1rem;
+                font-weight: 700;
+                margin: 10px;
+                border-radius: 10px;
+
+            }
+
+            .message {
+                border: solid 2px #FFC857;
+                font-size: 1.5rem;
+                color: #2E4052;
+                margin: 1rem;
+                text-transform: uppercase;
+                padding: 1.2rem;
+            }
+
+            #stage {
+                width: 300px;
+                margin: 10px;
+                display: inline-block;
+            }
+
+
         </style>
         <script type="text/javascript" src="js/svg-engine.browser.js" defer></script>
+        <script>
+            function setMessage(message) {
+                var newMessage = document.createElement("div");
+                newMessage.className = "message";
+                newMessage.append(message);
+                document.getElementById("root").appendChild(newMessage);
+            }
+        </script>
     </head>
     <body>
         <header>
             <h1>SVGEngine Examples</h1>
             <nav>
                 <a href="/">Index</a> -
-                <a href="/simple">Simple</a>
+                <a href="/simple">Simple</a> - 
+                <a href="/loadClass">loadClass</a>
             </nav>
         </header>
         <main id="content">
