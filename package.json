@@ -31,7 +31,11 @@
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "eslint": "^4.4.1",
-    "eslint-config-google": "^0.9.1",
+    "eslint-config-google": "^0.9.1"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "@babel/runtime": "^7.4.4",
     "koa": "^2.7.0",
     "koa-ejs": "^4.2.0",
     "koa-logger": "^3.2.0",
@@ -39,14 +43,10 @@
     "koa-static": "^5.0.0",
     "koa-static-server": "^1.4.0",
     "koa-views": "^6.2.0",
+    "regenerator-runtime": "^0.13.2",
+    "rollup": "^1.12.3",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-node-resolve": "^4.2.3"
-  },
-  "dependencies": {
-    "@babel/polyfill": "^7.4.4",
-    "@babel/runtime": "^7.4.4",
-    "regenerator-runtime": "^0.13.2",
-    "rollup": "^1.12.3"
   }
 }
