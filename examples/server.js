@@ -6,7 +6,7 @@ const router = require('koa-router')();
 
 const render = require('koa-ejs');
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 const app = new Koa();
 
 app.use(logger());
