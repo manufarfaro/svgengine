@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rollup -c",
+    "start": "node examples/server.js",
     "start:examples": "node examples/server.js",
     "lint": "./node_modules/.bin/eslint ./js/engine.js",
     "go": "rollup -c && node examples/server.js"
